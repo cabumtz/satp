@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/templates/mainTemplate.xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:p="http://primefaces.org/ui"
+				xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="top">
+        top
+    </ui:define>
+
+    <ui:define name="left">
+        left
+    </ui:define>
+
+    <ui:define name="right">
+        right
+    </ui:define>
+
+    <ui:define name="content">
+<!--		<h1>Datos Generales</h1>-->
+
+		<h:form>
+
+
+			<p:wizard backLabel="Anterior" nextLabel="Siguiente" >
+
+				<p:tab id="infoPersonal" title="Personal">
+					<p:panel header="Informaci&oacute;n Personal">
+						<p:messages />
+
+						<h:panelGrid columns="2" cellpadding="5">
+							<p:outputLabel  for="nombre" value="Nombre" />
+							<p:inputText id="nombre"  required="true" value="#{altaChoferController.personafisica.nombre}" />
+
+							<p:outputLabel  for="apellidoPaterno" value="Apellido Paterno" />
+							<p:inputText id="apellidoPaterno" required="true" value="#{altaChoferController.personafisica.apellidoPaterno}" />
+
+							<p:outputLabel  for="apellidoMaterno" value="Apellido Materno" />
+							<p:inputText id="apellidoMaterno" required="true" value="#{altaChoferController.personafisica.apellidoMaterno}" />
+
+							
+
+							
+							
+						</h:panelGrid>
+
+					</p:panel>
+				</p:tab>
+
+				<p:tab id="infoDomicilio" title="Domicilio">
+					<p:panel header="Domicilio">
+						<p:messages />
+
+						<h:panelGrid columns="2" cellpadding="5">
+							
+							<p:outputLabel  for="paisMenu" value="Pa&iacute;s" />
+							
+							<p:selectOneMenu id="paisMenu" 
+											 effect="fade" 
+											 value="#{altaChoferController.idPaisSeleccionado}"
+											 required="true"  >
+								<f:selectItem itemLabel=" - Seleccione - "  itemValue="" />
+
+								<f:selectItems value="#{altaChoferController.listaPaises}"
+											   var="pais" itemLabel="#{pais.nombre}" itemValue="#{pais.idPais}" />
+								<p:ajax update="estadoMenu" listener="#{altaChoferController.actualizaListaEstados}"/>
+							</p:selectOneMenu>
+							
+							<p:outputLabel  for="codigoPostal" value="C. P." />
+							<p:inputText id="codigoPostal"  required="true" value="#{altaChoferController.direccion.codigoPostal}" />
+							
+							<p:outputLabel for="estadoMenu" value="Estado" />
+							
+							<p:selectOneMenu id="estadoMenu" 
+											 effect="fade" 
+											 value="#{altaChoferController.idEstadoSeleccionado}"
+											 required="true"  >
+								<f:selectItem itemLabel=" - Seleccione - "  itemValue="" />
+
+								<f:selectItems value="#{altaChoferController.listaEstados}"
+											   var="estado" itemLabel="#{estado.nombre}" itemValue="#{estado.idEstado}" />
+								
+							</p:selectOneMenu>
+							
+							<p:outputLabel  for="ciudadDelegacionMunicipio" value="Ciudad/Delegaci&oacute;n/Municipio" />
+							<p:inputText id="ciudadDelegacionMunicipio"  required="true" value="#{altaChoferController.direccion.ciudadDelegacionMunicipio}" />
+							
+							<p:outputLabel  for="colonia" value="Colonia" />
+							<p:inputText id="colonia"  required="true" value="#{altaChoferController.direccion.colonia}" />
+							
+							<p:outputLabel  for="calle" value="Calle" />
+							<p:inputText id="calle"  required="true" value="#{altaChoferController.direccion.calle}" />
+							
+							<p:outputLabel  for="numeroExterior" value="No. Exterior" />
+							<p:inputText id="numeroExterior"  required="true" value="#{altaChoferController.direccion.numeroExterior}" />
+							
+							<p:outputLabel  for="numeroInterior" value="No. Interior" />
+							<p:inputText id="numeroInterior"  required="true" value="#{altaChoferController.direccion.numeroInterior}" />
+							
+							<p:outputLabel  for="comentarioDir" value="Comentario" />
+							<p:inputText id="comentarioDir"  required="true" value="#{altaChoferController.direccion.comentario}" />
+						</h:panelGrid>
+
+					</p:panel>
+				</p:tab>
+
+
+				<p:tab id="infoTelefonos" title="Tel&eacute;fonos">
+					<p:panel header="Tel&eacute;fonos">
+						<p:messages />
+
+						<h:panelGrid columns="2" cellpadding="5">
+
+						</h:panelGrid>
+
+					</p:panel>
+				</p:tab>
+
+				<p:tab id="resumen" title="Res&uacute;men">
+					<p:panel header="Res&uacute;men">
+						<p:messages />
+					</p:panel>
+				</p:tab>
+
+			</p:wizard>
+
+
+
+		</h:form>
+
+    </ui:define>
+
+    <ui:define name="bottom">
+        bottom
+    </ui:define>
+
+</ui:composition>

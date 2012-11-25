@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/satp_db</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">cuchara1</property>
+    <mapping resource="mx/com/magmasoft/satp/model/Parametroglobal.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Agrupacionlaboral.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Tipoplaca.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Concecionario.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Entidad.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Empresaruta.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Placa.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Administradormaster.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Empresa.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Ciudad.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Administadorruta.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Estatuslicenciaconducir.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Personafisica.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Licenciaconducir.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Renovacionlicenciaconducir.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Tipodireccion.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Pais.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Agrupacionpersonas.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Tipotelefono.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Tipomime.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Archivo.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Personamoral.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Direccion.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Miembrofisico.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Tipolicenciaconducir.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Tipoarchivo.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Colonia.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Chofer.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Estado.hbm.xml"/>
+    <mapping resource="mx/com/magmasoft/satp/model/Telefono.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+      http://java.sun.com/xml/ns/javaee
+      http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+	<application>
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+				
+		<resource-bundle>
+			<base-name>MessageResources</base-name>
+			<var>messages</var>
+		</resource-bundle>
+		
+	</application>
+	
+	<managed-bean>
+		<managed-bean-name>choferController</managed-bean-name>
+		<managed-bean-class>mx.com.magmasoft.satp.controller.ChoferController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		
+		<managed-property>
+			<property-name>choferService</property-name>
+			<value>#{choferService}</value>
+		</managed-property>
+
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>altaChoferController</managed-bean-name>
+		<managed-bean-class>mx.com.magmasoft.satp.controller.AltaChoferController</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+		
+		<managed-property>
+			<property-name>choferService</property-name>
+			<value>#{choferService}</value>
+		</managed-property>
+
+		<managed-property>
+			<property-name>paisService</property-name>
+			<value>#{paisService}</value>
+		</managed-property>
+		
+		<managed-property>
+			<property-name>estadoService</property-name>
+			<value>#{estadoService}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>dashboardAdminMasterController</managed-bean-name>
+		<managed-bean-class>mx.com.magmasoft.satp.controller.DashboardAdminMasterController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>confController</managed-bean-name>
+		<managed-bean-class>mx.com.magmasoft.satp.controller.ConfController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		
+		<managed-property>
+			<property-name>contextPath</property-name>
+			<value>/satp</value>
+		</managed-property>
+	</managed-bean>
+	
+	<converter>
+		<converter-id>paisConverter</converter-id>
+		<converter-class>mx.com.magmasoft.satp.jsf.converter.PaisConverter</converter-class>
+	</converter>
+	
+</faces-config>

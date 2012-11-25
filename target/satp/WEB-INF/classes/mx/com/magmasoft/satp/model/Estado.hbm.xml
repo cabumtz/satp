@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-sep-2012 14:15:10 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="mx.com.magmasoft.satp.model.Estado" table="estado" catalog="satp_db">
+        <id name="idEstado" type="int">
+            <column name="idEstado" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="pais" class="mx.com.magmasoft.satp.model.Pais" fetch="select">
+            <column name="idPais" not-null="true" />
+        </many-to-one>
+        <property name="clave" type="string">
+            <column name="Clave" length="45" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="45" />
+        </property>
+        <property name="abreviatura" type="string">
+            <column name="Abreviatura" length="45" />
+        </property>
+        <set name="direccions" inverse="true">
+            <key>
+                <column name="idEstado" not-null="true" />
+            </key>
+            <one-to-many class="mx.com.magmasoft.satp.model.Direccion" />
+        </set>
+        <set name="ciudads" inverse="true">
+            <key>
+                <column name="idEstado" not-null="true" />
+            </key>
+            <one-to-many class="mx.com.magmasoft.satp.model.Ciudad" />
+        </set>
+    </class>
+</hibernate-mapping>

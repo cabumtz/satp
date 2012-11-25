@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<context id="context1">
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/satp_db" userId="root"
+			password="cuchara1" />
+
+		<javaModelGenerator targetPackage="mx.com.magmasoft.satp.dao.mybatis.model"
+			targetProject="satp_da" />
+
+		<sqlMapGenerator targetPackage="mx.com.magmasoft.satp.dao.mybatis.mapping"
+			targetProject="satp_da" />
+
+		<javaClientGenerator targetPackage="mx.com.magmasoft.satp.dao.mybatis.client"
+			targetProject="satp_da" type="XMLMAPPER" />
+
+		<table schema="satp_db" tableName="administadorruta" />
+		<table schema="satp_db" tableName="administradormaster" />
+		<table schema="satp_db" tableName="agrupacionlaboral" />
+		<table schema="satp_db" tableName="agrupacionpersonas" />
+		<table schema="satp_db" tableName="archivo" />
+		<table schema="satp_db" tableName="chofer" />
+		<table schema="satp_db" tableName="ciudad" />
+		<table schema="satp_db" tableName="colonia" />
+		<table schema="satp_db" tableName="concecionario" />
+		<table schema="satp_db" tableName="direccion" />
+		<table schema="satp_db" tableName="empresa" />
+		<table schema="satp_db" tableName="empresaruta" />
+		<table schema="satp_db" tableName="entidad" />
+		<table schema="satp_db" tableName="estado" />
+		<table schema="satp_db" tableName="estatuslicenciaconducir" />
+		<table schema="satp_db" tableName="licenciaconducir" />
+		<table schema="satp_db" tableName="miembrofisico" />
+		<table schema="satp_db" tableName="pais" />
+		<table schema="satp_db" tableName="parametroglobal" />
+		<table schema="satp_db" tableName="personafisica" />
+		<table schema="satp_db" tableName="personamoral" />
+		<table schema="satp_db" tableName="placa" />
+		<table schema="satp_db" tableName="renovacionlicenciaconducir" />
+		<table schema="satp_db" tableName="telefono" />
+		<table schema="satp_db" tableName="tipoarchivo" />
+		<table schema="satp_db" tableName="tipodireccion" />
+		<table schema="satp_db" tableName="tipolicenciaconducir" />
+		<table schema="satp_db" tableName="tipomime" />
+		<table schema="satp_db" tableName="tipoplaca" />
+		<table schema="satp_db" tableName="tipotelefono" />
+
+
+	</context>
+</generatorConfiguration>

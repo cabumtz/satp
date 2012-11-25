@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/mainTemplate.xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core" >
+
+	<ui:define name="top">
+        top
+    </ui:define>
+
+	<ui:define name="left">
+        left
+    </ui:define>
+
+	<ui:define name="right">
+        right
+    </ui:define>
+
+	<ui:define name="content">
+
+		<!-- paginator="true" rows="10"
+			paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+			rowsPerPageTemplate="5,10,15" -->
+			
+		<p:dataTable id="dataTable" var="chofer" value="#{choferController.listaChoferes}">
+			<f:facet name="header">
+				Lista de empleados
+			</f:facet>
+		
+			<p:column>
+				<f:facet name="header">
+					id
+				</f:facet>
+					#{chofer.idChofer}
+			</p:column>
+		
+		
+			<f:facet name="header">
+				Hay un total de dah! Choferes
+			</f:facet>
+		</p:dataTable>
+	</ui:define>
+
+	<ui:define name="bottom">
+        bottom
+    </ui:define>
+</ui:composition>

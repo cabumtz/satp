@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="satp_db"/>
+  <table-filter match-name="telefono"/>
+  <table-filter match-name="concecionario"/>
+  <table-filter match-name="tipodireccion"/>
+  <table-filter match-name="renovacionlicenciaconducir"/>
+  <table-filter match-name="administradormaster"/>
+  <table-filter match-name="archivo"/>
+  <table-filter match-name="tipotelefono"/>
+  <table-filter match-name="direccion"/>
+  <table-filter match-name="ciudad"/>
+  <table-filter match-name="empresaruta"/>
+  <table-filter match-name="estado"/>
+  <table-filter match-name="entidad"/>
+  <table-filter match-name="personamoral"/>
+  <table-filter match-name="tipomime"/>
+  <table-filter match-name="tipoplaca"/>
+  <table-filter match-name="parametroglobal"/>
+  <table-filter match-name="pais"/>
+  <table-filter match-name="tipoarchivo"/>
+  <table-filter match-name="empresa"/>
+  <table-filter match-name="placa"/>
+  <table-filter match-name="colonia"/>
+  <table-filter match-name="miembrofisico"/>
+  <table-filter match-name="chofer"/>
+  <table-filter match-name="administadorruta"/>
+  <table-filter match-name="agrupacionlaboral"/>
+  <table-filter match-name="tipolicenciaconducir"/>
+  <table-filter match-name="agrupacionpersonas"/>
+  <table-filter match-name="licenciaconducir"/>
+  <table-filter match-name="estatuslicenciaconducir"/>
+  <table-filter match-name="personafisica"/>
+</hibernate-reverse-engineering>

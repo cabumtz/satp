@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="mx.com.magmasoft.satp.vo.Miembrofisico" table="miembrofisico" catalog="satp_db">
+	
+		<id name="idMiembroFisico" type="int">
+			<column name="idMiembroFisico" />
+			<generator class="assigned" />
+		</id>
+		
+		<many-to-one name="agrupacionpersonas" class="mx.com.magmasoft.satp.vo.Agrupacionpersonas"
+				fetch="join" lazy="false" cascade="save-update">
+			<column name="idAgrupacionPersonas" not-null="true" />
+		</many-to-one>
+		
+		<many-to-one name="personafisica" class="mx.com.magmasoft.satp.vo.Personafisica"
+				fetch="join" lazy="false" cascade="save-update">
+			<column name="idPersonaFisica" not-null="true" />
+		</many-to-one>
+		
+		<property name="clave" type="string">
+			<column name="Clave" length="45" />
+		</property>
+		
+		<one-to-one name="administadorruta" class="mx.com.magmasoft.satp.vo.Administadorruta" property-ref="miembrofisico"
+			lazy="false" cascade="save-update" />
+		<one-to-one name="administradormaster" class="mx.com.magmasoft.satp.vo.Administradormaster" property-ref="miembrofisico"
+			lazy="false" cascade="save-update" />
+		<one-to-one name="chofer" class="mx.com.magmasoft.satp.vo.Chofer" property-ref="miembrofisico"
+			lazy="false" cascade="save-update" />
+		<one-to-one name="concecionario" class="mx.com.magmasoft.satp.vo.Concecionario" property-ref="miembrofisico"
+			lazy="false" cascade="save-update" />
+		
+	</class>
+</hibernate-mapping>

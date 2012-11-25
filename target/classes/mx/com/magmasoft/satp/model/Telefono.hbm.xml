@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-sep-2012 14:15:10 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="mx.com.magmasoft.satp.vo.Telefono" table="telefono" catalog="satp_db">
+        <id name="idTelefono" type="java.lang.Integer">
+            <column name="idTelefono" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="entidad" class="mx.com.magmasoft.satp.vo.Entidad" fetch="select">
+            <column name="idEntidad" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipotelefono" class="mx.com.magmasoft.satp.vo.Tipotelefono" fetch="select">
+            <column name="idTipoTelefono" not-null="true" />
+        </many-to-one>
+        <property name="numero" type="string">
+            <column name="Numero" length="45" not-null="true" />
+        </property>
+        <property name="comentario" type="string">
+            <column name="Comentario" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-sep-2012 14:15:10 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+	<class name="mx.com.magmasoft.satp.model.Entidad" table="entidad" catalog="satp_db">
+		<id name="idEntidad" type="java.lang.Integer">
+			<column name="idEntidad" />
+			<generator class="identity" />
+		</id>
+		<property name="rfc" type="string">
+			<column name="Rfc" length="45" />
+		</property>
+		<set name="telefonos" inverse="true">
+			<key>
+				<column name="idEntidad" not-null="true" />
+			</key>
+			<one-to-many class="mx.com.magmasoft.satp.model.Telefono" />
+		</set>
+		<set name="direccions" inverse="true">
+			<key>
+				<column name="idEntidad" not-null="true" />
+			</key>
+			<one-to-many class="mx.com.magmasoft.satp.model.Direccion" />
+		</set>
+		<set name="archivos" inverse="true">
+			<key>
+				<column name="idEntidad" not-null="true" />
+			</key>
+			<one-to-many class="mx.com.magmasoft.satp.model.Archivo" />
+		</set>
+		
+		<one-to-one name="personafisica" class="mx.com.magmasoft.satp.model.Personafisica" property-ref="entidad" />
+		<one-to-one name="personamoral" class="mx.com.magmasoft.satp.model.Personamoral" property-ref="entidad" />
+	</class>
+</hibernate-mapping>

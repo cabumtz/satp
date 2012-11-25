@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd	
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd" default-autowire="byName">
+
+	<!-- Scans within the base package of the application for @Components to configure as beans -->
+	<bean id="placeholderConfig"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:db.properties" />
+	</bean>
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${db.driver}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingResources">
+			<list>
+				<value>mx/com/magmasoft/satp/model/Parametroglobal.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Agrupacionlaboral.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Tipoplaca.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Concecionario.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Entidad.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Empresaruta.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Placa.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Administradormaster.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Empresa.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Ciudad.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Administadorruta.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Estatuslicenciaconducir.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Personafisica.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Licenciaconducir.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Renovacionlicenciaconducir.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Tipodireccion.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Pais.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Agrupacionpersonas.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Tipotelefono.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Tipomime.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Archivo.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Personamoral.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Direccion.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Miembrofisico.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Tipolicenciaconducir.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Tipoarchivo.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Colonia.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Chofer.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Estado.hbm.xml</value>
+				<value>mx/com/magmasoft/satp/model/Telefono.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${db.dialect}</prop>
+				<prop key="hibernate.show.sql">${db.show_sql}</prop> 
+			</props>
+		</property>
+	</bean>
+
+	<context:component-scan base-package="mx.com.magmasoft.satp.dao.hibernate">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
+	</context:component-scan>
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager" />
+	
+	<tx:annotation-driven mode="proxy" transaction-manager="transactionManager" />
+
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+</beans>

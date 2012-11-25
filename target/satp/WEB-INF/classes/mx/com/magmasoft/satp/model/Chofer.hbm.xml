@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-sep-2012 14:15:10 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="mx.com.magmasoft.satp.model.Chofer" table="chofer" catalog="satp_db">
+        <id name="idChofer" type="int">
+            <column name="idChofer" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="miembrofisico" class="mx.com.magmasoft.satp.model.Miembrofisico" fetch="select" unique="true">
+            <column name="idMiembroFisico" not-null="true" />
+        </many-to-one>
+        <set name="licenciaconducirs" inverse="true">
+            <key>
+                <column name="idChofer" not-null="true" />
+            </key>
+            <one-to-many class="mx.com.magmasoft.satp.model.Licenciaconducir" />
+        </set>
+    </class>
+</hibernate-mapping>

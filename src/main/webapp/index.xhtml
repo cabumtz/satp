@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/templates/mainTemplate.xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:p="http://primefaces.org/ui"
+				xmlns="http://www.w3.org/1999/xhtml" >
+
+    <ui:define name="top">
+        top
+    </ui:define>
+
+    <ui:define name="left">
+        left
+    </ui:define>
+
+    <ui:define name="right">
+        right
+    </ui:define>
+
+    <ui:define name="content">
+		<!--
+		<p:panel id="panel" header="New Person" >
+			
+		</p:panel>
+		
+        <h:panelGrid columns="2" cellpadding="5">
+			<h:link outcome="chofer/choferAlta" value="Alta de Chofer"  />
+		</h:panelGrid>
+		-->
+		<h:form>
+			<p:panel id="UpperContainer" header="">
+				
+
+			</p:panel>
+			<p:panel id="dashboardContainer" >
+				
+				<p:dashboard model="#{dashboardAdminMasterController.dashboardModel}" style="height:300px;" >
+				
+					<p:panel id="configuracion" header="Configuraci&oacute;n">
+						<div style="height: 200px;">
+							
+						</div>
+						
+					</p:panel>
+
+					<p:panel id="choferes" header="Choferes">
+						<ul>
+							<li><h:link outcome="/vista/pages/chofer/choferAlta" value="Altas"  /></li>
+							
+							<li><h:link outcome="/vista/pages/chofer/listaChoferes" value="Choferes"  /></li>
+							
+							<li>Bajas</li>
+							<li>Reportes</li>
+						</ul>
+
+					</p:panel>
+
+					
+
+				</p:dashboard>
+			</p:panel>
+		</h:form>
+    </ui:define>
+
+    <ui:define name="bottom">
+        bottom
+    </ui:define>
+
+</ui:composition>

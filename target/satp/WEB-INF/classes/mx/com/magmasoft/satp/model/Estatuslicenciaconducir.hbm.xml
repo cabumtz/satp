@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-sep-2012 14:15:10 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="mx.com.magmasoft.satp.model.Estatuslicenciaconducir" table="estatuslicenciaconducir" catalog="satp_db">
+        <id name="idEstatusLicenciaConducir" type="int">
+            <column name="idEstatusLicenciaConducir" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="45" />
+        </property>
+        <set name="renovacionlicenciaconducirs" inverse="true">
+            <key>
+                <column name="idEstatusLicenciaConducir" not-null="true" />
+            </key>
+            <one-to-many class="mx.com.magmasoft.satp.model.Renovacionlicenciaconducir" />
+        </set>
+    </class>
+</hibernate-mapping>

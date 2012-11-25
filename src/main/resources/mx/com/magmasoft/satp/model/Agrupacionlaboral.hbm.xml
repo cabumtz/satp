@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-sep-2012 14:15:10 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="mx.com.magmasoft.satp.vo.Agrupacionlaboral" table="agrupacionlaboral" catalog="satp_db">
+        <id name="idAgrupacionLaboral" type="java.lang.Integer">
+            <column name="idAgrupacionLaboral" />
+            <generator class="identity" />
+        </id>
+        <property name="razon" type="string">
+            <column name="Razon" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

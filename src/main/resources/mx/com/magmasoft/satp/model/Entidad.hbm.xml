@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="mx.com.magmasoft.satp.vo.Entidad" table="entidad" catalog="satp_db">
+		<id name="idEntidad" type="java.lang.Integer">
+			<column name="idEntidad" />
+			<generator class="identity" />
+		</id>
+		<property name="rfc" type="string">
+			<column name="Rfc" length="45" />
+		</property>
+		
+		<one-to-one name="personafisica" class="mx.com.magmasoft.satp.vo.Personafisica" property-ref="entidad" />
+		<one-to-one name="personamoral" class="mx.com.magmasoft.satp.vo.Personamoral" property-ref="entidad" />
+	</class>
+</hibernate-mapping>

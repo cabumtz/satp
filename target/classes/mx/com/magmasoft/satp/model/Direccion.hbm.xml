@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-sep-2012 14:15:10 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="mx.com.magmasoft.satp.vo.Direccion" table="direccion" catalog="satp_db">
+        <id name="idDireccion" type="int">
+            <column name="idDireccion" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="estado" class="mx.com.magmasoft.satp.vo.Estado"
+        		fetch="join" lazy="false" cascade="save-update">
+            <column name="idEstado" not-null="true" />
+        </many-to-one>
+        <many-to-one name="entidad" class="mx.com.magmasoft.satp.vo.Entidad"
+        		fetch="join" lazy="false" cascade="save-update">
+            <column name="idEntidad" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipodireccion" class="mx.com.magmasoft.satp.vo.Tipodireccion"
+        		fetch="join" lazy="false" cascade="save-update">
+            <column name="idTipoDireccion" not-null="true" />
+        </many-to-one>
+        <property name="calle" type="string">
+            <column name="Calle" length="45" />
+        </property>
+        <property name="numeroExterior" type="string">
+            <column name="NumeroExterior" length="45" />
+        </property>
+        <property name="numeroInterior" type="string">
+            <column name="NumeroInterior" length="45" />
+        </property>
+        <property name="codigoPostal" type="string">
+            <column name="CodigoPostal" length="45" />
+        </property>
+        <property name="ciudadDelegacionMunicipio" type="string">
+            <column name="CiudadDelegacionMunicipio" length="45" />
+        </property>
+        <property name="colonia" type="string">
+            <column name="Colonia" length="45" />
+        </property>
+        <property name="comentario" type="string">
+            <column name="Comentario" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

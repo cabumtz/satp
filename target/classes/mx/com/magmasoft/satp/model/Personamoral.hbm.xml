@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-sep-2012 14:15:10 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="mx.com.magmasoft.satp.vo.Personamoral" table="personamoral" catalog="satp_db">
+        <id name="idPersonaMoral" type="java.lang.Integer">
+            <column name="idPersonaMoral" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="agrupacionpersonas" class="mx.com.magmasoft.satp.vo.Agrupacionpersonas" fetch="select">
+            <column name="idAgrupacionPersonas" not-null="true" />
+        </many-to-one>
+        <many-to-one name="entidad" class="mx.com.magmasoft.satp.vo.Entidad" fetch="select" unique="true">
+            <column name="idEntidadFiscal" not-null="true" />
+        </many-to-one>
+        <property name="razonSocial" type="string">
+            <column name="RazonSocial" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>
