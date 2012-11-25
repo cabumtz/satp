@@ -1,6 +1,18 @@
+# java specific
 *.class
 
-# Package Files #
+# Maven is in charge to get the jars
 *.jar
+
+
+# package Files #
 *.war
 *.ear
+
+
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
