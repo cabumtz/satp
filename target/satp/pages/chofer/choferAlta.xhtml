@@ -22,7 +22,7 @@
 <!--		<h1>Datos Generales</h1>-->
 
 		<h:form>
-
+			<p:growl id="growl" sticky="true" showDetail="true"/>
 
 			<p:wizard backLabel="Anterior" nextLabel="Siguiente" >
 
@@ -97,10 +97,13 @@
 							<p:inputText id="numeroExterior"  required="true" value="#{altaChoferController.direccion.numeroExterior}" />
 							
 							<p:outputLabel  for="numeroInterior" value="No. Interior" />
-							<p:inputText id="numeroInterior"  required="true" value="#{altaChoferController.direccion.numeroInterior}" />
+							<p:inputText id="numeroInterior"  required="false" value="#{altaChoferController.direccion.numeroInterior}" />
 							
 							<p:outputLabel  for="comentarioDir" value="Comentario" />
-							<p:inputText id="comentarioDir"  required="true" value="#{altaChoferController.direccion.comentario}" />
+							
+							<p:inputTextarea id="comentarioDir" required="false" value="#{altaChoferController.direccion.comentario}"
+								rows="5" cols="35" maxlength="100"
+								counterTemplate="{0} caracteres faltantes." autoResize="false"/>
 						</h:panelGrid>
 
 					</p:panel>
@@ -112,7 +115,14 @@
 						<p:messages />
 
 						<h:panelGrid columns="2" cellpadding="5">
-
+							<p:outputLabel  for="telefonoCasa" value="Tel&eacute;fono Casa" />
+							<p:inputText id="telefonoCasa"  required="true" value="#{altaChoferController.telefono.numero}" />
+							
+							<p:outputLabel  for="comentarioTelefonoCasa" value="Comentario" />
+							
+							<p:inputTextarea id="comentarioTelefonoCasa" required="false" value="#{altaChoferController.telefono.comentario}"
+								rows="5" cols="35" maxlength="100"
+								counterTemplate="{0} caracteres faltantes." autoResize="false"/>
 						</h:panelGrid>
 
 					</p:panel>
@@ -121,6 +131,12 @@
 				<p:tab id="resumen" title="Res&uacute;men">
 					<p:panel header="Res&uacute;men">
 						<p:messages />
+						
+						<h:panelGrid columns="2" cellpadding="5">
+							Esta seguro de querer guardar
+							
+							<p:commandButton value="Guardar" actionListener="#{altaChoferController.guardar}" update="growl" />
+						</h:panelGrid>
 					</p:panel>
 				</p:tab>
 

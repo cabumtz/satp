@@ -3,15 +3,15 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 02-sep-2012 14:15:10 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="mx.com.magmasoft.satp.model.Renovacionlicenciaconducir" table="renovacionlicenciaconducir" catalog="satp_db">
+    <class name="mx.com.magmasoft.satp.vo.Renovacionlicenciaconducir" table="renovacionlicenciaconducir" catalog="satp_db">
         <id name="idRenovacionLicenciaConducir" type="java.lang.Integer">
             <column name="idRenovacionLicenciaConducir" />
             <generator class="identity" />
         </id>
-        <many-to-one name="licenciaconducir" class="mx.com.magmasoft.satp.model.Licenciaconducir" fetch="select">
+        <many-to-one name="licenciaconducir" class="mx.com.magmasoft.satp.vo.Licenciaconducir" fetch="select">
             <column name="idLicenciaConducir" not-null="true" />
         </many-to-one>
-        <many-to-one name="estatuslicenciaconducir" class="mx.com.magmasoft.satp.model.Estatuslicenciaconducir" fetch="select">
+        <many-to-one name="estatuslicenciaconducir" class="mx.com.magmasoft.satp.vo.Estatuslicenciaconducir" fetch="select">
             <column name="idEstatusLicenciaConducir" not-null="true" />
         </many-to-one>
         <property name="fechaInicio" type="date">

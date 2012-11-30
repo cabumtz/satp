@@ -36,6 +36,7 @@
 			<p:panel id="dashboardContainer" >
 				
 				<p:dashboard model="#{dashboardAdminMasterController.dashboardModel}" style="height:300px;" >
+				
 					<p:panel id="configuracion" header="Configuraci&oacute;n">
 						<div style="height: 200px;">
 							
@@ -46,38 +47,16 @@
 					<p:panel id="choferes" header="Choferes">
 						<ul>
 							<li><h:link outcome="/vista/pages/chofer/choferAlta" value="Altas"  /></li>
-							<li>Modificaciones</li>
-							<li>Bajas</li>
-							<li>Reportes</li>
-						</ul>
-
-					</p:panel>
-
-					<p:panel id="unidades" header="Unidades">
-						<ul>
 							
-							<li>Modificaciones</li>
+							<li><h:link outcome="/vista/pages/chofer/listaChoferes" value="Choferes"  /></li>
+							
 							<li>Bajas</li>
 							<li>Reportes</li>
 						</ul>
+
 					</p:panel>
 
-
-					<p:panel id="administradores" header="Administradores">
-						<ul>
-							<li>Modificaciones</li>
-							<li>Bajas</li>
-							<li>Reportes</li>
-						</ul>
-					</p:panel>
-
-					<p:panel id="concecionarios" header="Concecionarios">
-						<ul>
-							<li>Modificaciones</li>
-							<li>Bajas</li>
-							<li>Reportes</li>
-						</ul>
-					</p:panel>
+					
 
 				</p:dashboard>
 			</p:panel>

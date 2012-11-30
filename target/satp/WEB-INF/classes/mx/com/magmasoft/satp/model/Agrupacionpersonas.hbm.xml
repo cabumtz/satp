@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 02-sep-2012 14:15:10 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="mx.com.magmasoft.satp.model.Agrupacionpersonas" table="agrupacionpersonas" catalog="satp_db">
+    <class name="mx.com.magmasoft.satp.vo.Agrupacionpersonas" table="agrupacionpersonas" catalog="satp_db">
         <id name="idAgrupacionPersonas" type="java.lang.Integer">
             <column name="idAgrupacionPersonas" />
             <generator class="identity" />
@@ -11,23 +11,5 @@
         <property name="nombre" type="string">
             <column name="Nombre" length="45" not-null="true" />
         </property>
-        <set name="miembrofisicos" inverse="true">
-            <key>
-                <column name="idAgrupacionPersonas" not-null="true" />
-            </key>
-            <one-to-many class="mx.com.magmasoft.satp.model.Miembrofisico" />
-        </set>
-        <set name="personamorals" inverse="true">
-            <key>
-                <column name="idAgrupacionPersonas" not-null="true" />
-            </key>
-            <one-to-many class="mx.com.magmasoft.satp.model.Personamoral" />
-        </set>
-        <set name="empresas" inverse="true">
-            <key>
-                <column name="idAgrupacionPersonas" not-null="true" />
-            </key>
-            <one-to-many class="mx.com.magmasoft.satp.model.Empresa" />
-        </set>
     </class>
 </hibernate-mapping>

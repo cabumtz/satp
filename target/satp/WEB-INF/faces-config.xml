@@ -61,7 +61,7 @@
 		
 		<managed-property>
 			<property-name>contextPath</property-name>
-			<value>${pageContext.request.contextPath}</value>
+			<value>/satp</value>
 		</managed-property>
 	</managed-bean>
 	

@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 02-sep-2012 14:15:10 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="mx.com.magmasoft.satp.model.Parametroglobal" table="parametroglobal" catalog="satp_db">
+    <class name="mx.com.magmasoft.satp.vo.Parametroglobal" table="parametroglobal" catalog="satp_db">
         <id name="idParametroGlobal" type="int">
             <column name="idParametroGlobal" />
             <generator class="assigned" />

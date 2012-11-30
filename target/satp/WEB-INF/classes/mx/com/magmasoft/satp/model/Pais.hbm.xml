@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 02-sep-2012 14:15:10 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="mx.com.magmasoft.satp.model.Pais" table="pais" catalog="satp_db">
+    <class name="mx.com.magmasoft.satp.vo.Pais" table="pais" catalog="satp_db">
         <id name="idPais" type="int">
             <column name="idPais" />
             <generator class="assigned" />
@@ -17,11 +17,6 @@
         <property name="abreviatura" type="string">
             <column name="Abreviatura" length="45" />
         </property>
-        <set name="estados" inverse="true">
-            <key>
-                <column name="idPais" not-null="true" />
-            </key>
-            <one-to-many class="mx.com.magmasoft.satp.model.Estado" />
-        </set>
+
     </class>
 </hibernate-mapping>

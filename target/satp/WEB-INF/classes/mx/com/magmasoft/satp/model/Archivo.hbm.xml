@@ -3,18 +3,21 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 02-sep-2012 14:15:10 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="mx.com.magmasoft.satp.model.Archivo" table="archivo" catalog="satp_db">
+    <class name="mx.com.magmasoft.satp.vo.Archivo" table="archivo" catalog="satp_db">
         <id name="idArchivo" type="java.lang.Integer">
             <column name="idArchivo" />
             <generator class="identity" />
         </id>
-        <many-to-one name="tipomime" class="mx.com.magmasoft.satp.model.Tipomime" fetch="select">
+        <many-to-one name="tipomime" class="mx.com.magmasoft.satp.vo.Tipomime"
+        		fetch="join" lazy="false" cascade="save-update">
             <column name="idTipoMime" not-null="true" />
         </many-to-one>
-        <many-to-one name="tipoarchivo" class="mx.com.magmasoft.satp.model.Tipoarchivo" fetch="select">
+        <many-to-one name="tipoarchivo" class="mx.com.magmasoft.satp.vo.Tipoarchivo"
+        		fetch="join" lazy="false" cascade="save-update">
             <column name="idTipoArchivo" not-null="true" />
         </many-to-one>
-        <many-to-one name="entidad" class="mx.com.magmasoft.satp.model.Entidad" fetch="select">
+        <many-to-one name="entidad" class="mx.com.magmasoft.satp.vo.Entidad"
+        		fetch="join" lazy="false" cascade="save-update">
             <column name="idEntidad" not-null="true" />
         </many-to-one>
         <property name="nombre" type="string">

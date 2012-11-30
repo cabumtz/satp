@@ -3,12 +3,13 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 02-sep-2012 14:15:10 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="mx.com.magmasoft.satp.model.Concecionario" table="concecionario" catalog="satp_db">
+    <class name="mx.com.magmasoft.satp.vo.Concecionario" table="concecionario" catalog="satp_db">
         <id name="idConcecionario" type="int">
             <column name="idConcecionario" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="miembrofisico" class="mx.com.magmasoft.satp.model.Miembrofisico" fetch="select">
+        <many-to-one name="miembrofisico" class="mx.com.magmasoft.satp.vo.Miembrofisico" unique="true"
+        		fetch="join" lazy="false" cascade="save-update">
             <column name="idMiembroFisico" not-null="true" />
         </many-to-one>
     </class>

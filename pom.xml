@@ -269,6 +269,10 @@
 					<groupId>com.sun.jmx</groupId>
 					<artifactId>jmxri</artifactId>
 				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
 			</exclusions>
 			<scope>compile</scope>
 		</dependency>
@@ -349,6 +353,8 @@
 			<artifactId>all-themes</artifactId>
 			<version>1.0.7</version>
 		</dependency>
+
+		
 	</dependencies>
 
 	<repositories>

@@ -3,12 +3,13 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 02-sep-2012 14:15:10 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="mx.com.magmasoft.satp.model.Colonia" table="colonia" catalog="satp_db">
+    <class name="mx.com.magmasoft.satp.vo.Colonia" table="colonia" catalog="satp_db">
         <id name="idColonia" type="int">
             <column name="idColonia" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="ciudad" class="mx.com.magmasoft.satp.model.Ciudad" fetch="select">
+        <many-to-one name="ciudad" class="mx.com.magmasoft.satp.vo.Ciudad"
+        		fetch="join" lazy="false" cascade="save-update">
             <column name="idCiudad" not-null="true" />
         </many-to-one>
         <property name="clave" type="string">

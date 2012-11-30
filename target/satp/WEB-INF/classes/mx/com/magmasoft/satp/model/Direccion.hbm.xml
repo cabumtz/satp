@@ -3,18 +3,21 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 02-sep-2012 14:15:10 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="mx.com.magmasoft.satp.model.Direccion" table="direccion" catalog="satp_db">
+    <class name="mx.com.magmasoft.satp.vo.Direccion" table="direccion" catalog="satp_db">
         <id name="idDireccion" type="int">
             <column name="idDireccion" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="estado" class="mx.com.magmasoft.satp.model.Estado" fetch="select">
+        <many-to-one name="estado" class="mx.com.magmasoft.satp.vo.Estado"
+        		fetch="join" lazy="false" cascade="save-update">
             <column name="idEstado" not-null="true" />
         </many-to-one>
-        <many-to-one name="entidad" class="mx.com.magmasoft.satp.model.Entidad" fetch="select">
+        <many-to-one name="entidad" class="mx.com.magmasoft.satp.vo.Entidad"
+        		fetch="join" lazy="false" cascade="save-update">
             <column name="idEntidad" not-null="true" />
         </many-to-one>
-        <many-to-one name="tipodireccion" class="mx.com.magmasoft.satp.model.Tipodireccion" fetch="select">
+        <many-to-one name="tipodireccion" class="mx.com.magmasoft.satp.vo.Tipodireccion"
+        		fetch="join" lazy="false" cascade="save-update">
             <column name="idTipoDireccion" not-null="true" />
         </many-to-one>
         <property name="calle" type="string">
