@@ -50,7 +50,7 @@
 	
 	<managed-bean>
 		<managed-bean-name>dashboardAdminMasterController</managed-bean-name>
-		<managed-bean-class>mx.com.magmasoft.satp.controller.DashboardAdminMasterController</managed-bean-class>
+		<managed-bean-class>mx.com.magmasoft.satp.ui.controller.DashboardAdminMasterController</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	

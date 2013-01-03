@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
 import java.util.List;
 
-import mx.com.magmasoft.satp.dao.hibernate.PaisDao;
+import mx.com.magmasoft.satp.dao.hibernate.PaisDaoImpl;
 import mx.com.magmasoft.satp.dao.misc.HibernateUtil;
 import mx.com.magmasoft.satp.vo.Pais;
 
@@ -29,7 +29,7 @@ public class PaisDaoTest
 {
 	private static final Logger logger = Logger.getLogger(PaisDaoTest.class);
 	
-	private static PaisDao instance;
+	private static PaisDaoImpl instance;
 	private static Transaction tx;
 	private static SessionFactory sessionFactory;
 	
@@ -41,7 +41,7 @@ public class PaisDaoTest
 	public static void setUpClass() throws Exception
 	{
 		
-		instance = new PaisDao();
+		instance = new PaisDaoImpl();
 		sessionFactory = HibernateUtil.getSessionFactory();
 		instance.setSessionFactory(sessionFactory);
 		

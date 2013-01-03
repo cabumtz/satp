@@ -6,7 +6,8 @@ package mx.com.magmasoft.satp.service;
 
 import java.io.Serializable;
 import java.util.List;
-import mx.com.magmasoft.satp.dao.hibernate.PaisDao;
+
+import mx.com.magmasoft.satp.dao.PaisDao;
 import mx.com.magmasoft.satp.vo.Pais;
 
 import org.springframework.beans.factory.annotation.Autowired;

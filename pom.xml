@@ -348,13 +348,25 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.primefaces.extensions</groupId>
 			<artifactId>all-themes</artifactId>
 			<version>1.0.7</version>
 		</dependency>
-
 		
+		<dependency>
+			<groupId>commons-digester</groupId>
+			<artifactId>commons-digester</artifactId>
+			<version>2.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20090211</version>
+		</dependency>
+
 	</dependencies>
 
 	<repositories>
@@ -385,4 +397,5 @@
 		<!-- Shared version number properties -->
 		<org.springframework.version>3.1.2.RELEASE</org.springframework.version>
 	</properties>
+
 </project>

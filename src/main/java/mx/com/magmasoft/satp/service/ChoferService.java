@@ -6,7 +6,8 @@ package mx.com.magmasoft.satp.service;
 
 import java.io.Serializable;
 import java.util.List;
-import mx.com.magmasoft.satp.dao.hibernate.ChoferDao;
+
+import mx.com.magmasoft.satp.dao.ChoferDao;
 import mx.com.magmasoft.satp.filtros.busqueda.FiltroChofer;
 import mx.com.magmasoft.satp.vo.Chofer;
 import mx.com.magmasoft.satp.vo.Empresaruta;

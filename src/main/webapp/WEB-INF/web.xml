@@ -11,7 +11,8 @@
 		<param-name>primefaces.THEME</param-name>
 <!-- 		<param-value>eggplant</param-value> -->
 <!-- 			<param-value>humanity</param-value> -->
-		<param-value>redmond</param-value>
+<!-- 		<param-value>redmond</param-value> -->
+		<param-value>humanity</param-value>
 	</context-param>
 	
 	<!-- The definition of the Root Spring Container shared by all Servlets 

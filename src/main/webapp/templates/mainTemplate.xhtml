@@ -1,42 +1,72 @@
-<?xml version='1.0' encoding='UTF-8' ?> 
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:p="http://primefaces.org/ui">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
-    <h:head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link href="#{confController.contextPath}/resources/css/default.css" rel="stylesheet" type="text/css" />
-        <link href="#{confController.contextPath}/resources/css/cssLayout.css" rel="stylesheet" type="text/css" />
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<link href="#{confController.contextPath}/resources/css/default.css"
+		rel="stylesheet" type="text/css" />
+		
+	<link href="#{confController.contextPath}/resources/css/cssLayout.css"
+		rel="stylesheet" type="text/css" />
+	
 		<!--
 		<link href="/themes/#{confController.themeName}/skin.css" type="text/css" />
 		-->
-        <title>SATP System</title>
-    </h:head>
+	<title>SATP System</title>
+</h:head>
 
-    <h:body>
+<h:body>
 
-        <div id="top">
-            <ui:insert name="top">Top</ui:insert>
-        </div>
-        <div>
-            <div id="left">
-                <ui:insert name="left">Left</ui:insert>
-            </div>
-            <div>
+	<div id="top">
+	
+		<ui:insert name="top"><!-- top --></ui:insert>
+
+		<p:menubar>
+			<p:submenu label="Administrar Entidades">
+				<p:menuitem value="Usuarios" url="#" />
+				<p:menuitem value="Choferes" url="/vista/pages/chofer/listaChoferes.xhtml" />
+				<p:menuitem value="Concecionarios" url="#" />
+				<p:menuitem value="Administradores" url="#" />
+				<p:menuitem value="Unidades de Transporte" url="#" />
+			</p:submenu>
+			<p:submenu label="Evaluación">
+				<p:menuitem value="Califica Chofer" url="#" />
+				<p:menuitem value="Califica Concecionario" url="#" />
+				<p:menuitem value="Califica Administrador" url="#" />
+				<p:menuitem value="Califica Unidad de Transporte" url="#" />
+			</p:submenu>
+			<p:submenu label="Reportes">
+				<p:menuitem value="Licencias" url="#" />
+				<p:menuitem value="Unidades" url="#" />
+				<p:menuitem value="Choferes" url="#" />
+			</p:submenu>
+		</p:menubar>
+
+	</div>
+	<div>
+		<div id="left">
+			<ui:insert name="left"><!-- left --></ui:insert>
+		</div>
+		<div>
+				
                 <div id="right">
-                    <ui:insert name="right">Right</ui:insert>
+                    <ui:insert name="right"><!-- right --></ui:insert>
                 </div>
-                <div id="content" class="right_content" style="height: 100%;">
-                    <ui:insert name="content">Content</ui:insert>
-                </div>
-            </div>
-        </div>
-        <div id="bottom">
-            <ui:insert name="bottom">Bottom</ui:insert>
-        </div>
+                
+			<div id="content" class="right_content" style="height: 100%;">
+				<ui:insert name="content"><!-- content --></ui:insert>
+			</div>
+		</div>
+	</div>
+	<div id="bottom">
+		<ui:insert name="bottom"><!-- bottom --></ui:insert>
+	</div>
 
-    </h:body>
+</h:body>
 
 </html>

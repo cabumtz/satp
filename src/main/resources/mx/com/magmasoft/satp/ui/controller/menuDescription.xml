@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<menuDescription>
+	<mi-list>
+		<mi label="Administrar Entidades" url="#" >
+			<mi-list>
+				<mi label="Usuarios" url="#" />
+				<mi label="Choferes" url="/vista/pages/chofer/listaChoferes" />
+				<mi label="Concecionarios" url="#" />
+				<mi label="Unidades de Transporte" url="#" />
+			</mi-list>
+		</mi>
+		
+		
+		<mi label="Evaluación" url="#">
+			<mi-list>
+				<mi label="Califica Chofer" url="#" />
+				<mi label="Califica Concecionario" url="#" />
+				<mi label="Califica Administrador" url="#" />
+			</mi-list>
+		</mi>
+		
+		<mi label="Reportes" url="#">
+			<mi-list>
+				<mi label="Licencias" url="#" />
+				<mi label="Unidades" url="#" />
+				<mi label="Choferes" url="#" />
+			</mi-list>
+		</mi>
+		
+		
+		
+		
+	
+	</mi-list>
+</menuDescription>
